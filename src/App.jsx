@@ -1,6 +1,8 @@
-import Counter from "./Components/Counter";
+import Counter from "./screens/Counter";
+import Home from "./screens/Home";
 import { useState } from "react";
 import styled from "styled-components";
+import { Route, Routes } from "react-router-dom";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -24,12 +26,20 @@ function App() {
 
   return (
     <AppWrapper>
-      <Counter
-        count={count}
-        upFn={countUp}
-        downFn={countDown}
-        resetFn={countReset}
-      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/simple/states"
+          element={
+            <Counter
+              count={count}
+              upFn={countUp}
+              downFn={countDown}
+              resetFn={countReset}
+            />
+          }
+        />
+      </Routes>
     </AppWrapper>
   );
 }
