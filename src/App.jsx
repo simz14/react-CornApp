@@ -3,6 +3,7 @@ import Home from "./screens/Home";
 import { useState } from "react";
 import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
+import Navigation from "./components/Navigations";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <AppWrapper>
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
