@@ -19,7 +19,7 @@ const CornImage = styled.img`
 const Home = () => {
   return (
     <HomeWrapper>
-      <Title>Golden Corn is life 🌽</Title>
+      <Title>Corn is life 🌽</Title>
       <CornImage src={cornImage} alt="Corn giph" />
     </HomeWrapper>
   );

@@ -1,6 +1,6 @@
 import Counter from "./screens/Counter";
 import Home from "./screens/Home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigations";
@@ -24,6 +24,19 @@ function App() {
   const countReset = () => {
     setCount((prev) => (prev = 0));
   };
+
+  const handler = (e) => {
+    if (e.key == "ArrowUp") {
+      return countUp();
+    }
+    if (e.key == "ArrowDown") {
+      return countDown();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handler);
+  }, []);
 
   return (
     <AppWrapper>
